@@ -1,0 +1,59 @@
+//{ Driver Code Starts
+//Initial Template for Java
+
+import java.io.*;
+import java.util.*;
+
+class GFG{
+    public static void main(String args[])throws IOException
+    {
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        int t = Integer.parseInt(in.readLine());
+        while(t-- > 0){
+            String a[] = in.readLine().trim().split("\\s+");
+            Long n = Long.parseLong(a[0]);
+            Long r = Long.parseLong(a[1]);
+            
+            Solution ob = new Solution();
+            System.out.println(ob.nPr(n, r));
+        }
+    }
+}
+// } Driver Code Ends
+
+
+
+
+//User function Template for Java
+
+/*class Solution{
+    static long nPr(long n, long r)
+    {
+        // code here
+        long nu = factorial(n);
+        long de = factorial(n-r);
+        return nu/de;
+    }
+    long factorial(long x)
+    {
+        long fact=1;
+        for(int i=1;i<=x;i++)
+         fact*=i;
+        return fact;
+    }
+}*/
+
+class Solution
+{
+    static long nPr(long n, long r)
+    {
+        // code here
+        long nf=1;
+        long df=1;
+        for(int i=1;i<=n;i++)
+         nf*=i;
+        for(int i=1;i<=(n-r);i++)
+         df*=i;
+        return nf/df;
+    }
+}
